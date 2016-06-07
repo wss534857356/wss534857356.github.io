@@ -206,6 +206,122 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/07/Native进行签名打包成Apk/" itemprop="url">
+                  安卓签名打包成Apk'
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-07T12:39:38+08:00" content="2016-06-07">
+              2016-06-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.使用keytool命令生成签名密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000</span><br></pre></td></tr></table></figure></p>
+<p>其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改, 在之后会使用这两个名称, 所以需要记录一下<br>之后会询问你密钥库口令和密钥口令(两个密码可以不同,之后密钥口令也会用到,所以也不要忘记),以及相关的签名信息,直接填写即可</p>
+<p>1+.使用Android Studio IDE 生成密钥</p>
+<p>菜单中选择build-&gt;Generate Signed APK,<br>之后点击[Create new…],<br>直接填写相关信息即可,<br>最后会生成.jks结尾的文件,.jks和.keystore都可以用作签名,所以使用上没有区别</p>
+<p>2.编辑android下的gradle.properties文件</p>
+<p>添加如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MYAPP_RELEASE_STORE_FILE=my-release-key.keystore    // 之前生成的文件名</span><br><span class="line">MYAPP_RELEASE_KEY_ALIAS=my-key-alias                // 生成签名时的<span class="built_in">alias</span>名称</span><br><span class="line">MYAPP_RELEASE_STORE_PASSWORD=store_password         // 密钥库口令</span><br><span class="line">MYAPP_RELEASE_KEY_PASSWORD=password                 // 密钥口令</span><br></pre></td></tr></table></figure></p>
+<p>3.编辑工程文件中的android/app/build.gradle文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">...  </span><br><span class="line">android &#123;  </span><br><span class="line">    ...  </span><br><span class="line">    defaultConfig &#123; ... &#125;  </span><br><span class="line">    signingConfigs &#123;  </span><br><span class="line">        release &#123;  </span><br><span class="line">            storeFile file(MYAPP_RELEASE_STORE_FILE)  </span><br><span class="line">            storePassword MYAPP_RELEASE_STORE_PASSWORD  </span><br><span class="line">            keyAlias MYAPP_RELEASE_KEY_ALIAS  </span><br><span class="line">            keyPassword MYAPP_RELEASE_KEY_PASSWORD  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    buildTypes &#123;  </span><br><span class="line">        release &#123;  </span><br><span class="line">            ...  </span><br><span class="line">            signingConfig signingConfigs.release  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">…</span><br></pre></td></tr></table></figure></p>
+<p>4.在android的目录下使用dos命令行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew assembleRelease</span><br></pre></td></tr></table></figure></p>
+<p>5.该命令运行结束之后，会在android/app/build/outputs/apk目录下面生成app-release.apk文件,即可用于发布</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/23/数据缓存及同步数据/" itemprop="url">
                   数据缓存及同步数据
                 </a>
@@ -382,7 +498,7 @@
         
           
             <p>今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个<strong>实时监听数据</strong></p>
-<p>完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class packet</span><br><span class="line">&#123;</span><br><span class="line">    private $lastId;</span><br><span class="line">    private $DB;</span><br><span class="line">    ...</span><br><span class="line">    private function verify()</span><br><span class="line">    &#123;</span><br><span class="line">        $sql_select = &apos;SELECT count(*) FROM raw_command WHERE id=:id AND ack_time IS NOT NULL ;&apos;;</span><br><span class="line">        // 已封装的查询方法, 使用PDO的prepare方法, 预保留字段.</span><br><span class="line">        $data = $this-&gt;DB-&gt;selectQuery($sql_select, [&apos;:id&apos; =&gt; $this-&gt;lastId]);</span><br><span class="line">        // 返回字段是否变化.</span><br><span class="line">        return count($data);</span><br><span class="line">    &#125;</span><br><span class="line">    public function timeKey()</span><br><span class="line">    &#123;</span><br><span class="line">        $i = 0;</span><br><span class="line">        while ($i != 3) &#123;</span><br><span class="line">            if ($this-&gt;verify()) &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">            $i++;</span><br><span class="line">            sleep(1);// 等待1s</span><br><span class="line">        &#125;;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class packet</span><br><span class="line">&#123;</span><br><span class="line">    private <span class="variable">$lastId</span>;</span><br><span class="line">    private <span class="variable">$DB</span>;</span><br><span class="line">    ...</span><br><span class="line">    private <span class="keyword">function</span> <span class="function"><span class="title">verify</span></span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$sql_select</span> = <span class="string">'SELECT count(*) FROM raw_command WHERE id=:id AND ack_time IS NOT NULL ;'</span>;</span><br><span class="line">        // 已封装的查询方法, 使用PDO的prepare方法, 预保留字段.</span><br><span class="line">        <span class="variable">$data</span> = <span class="variable">$this</span>-&gt;DB-&gt;selectQuery(<span class="variable">$sql_select</span>, [<span class="string">':id'</span> =&gt; <span class="variable">$this</span>-&gt;lastId]);</span><br><span class="line">        // 返回字段是否变化.</span><br><span class="line">        <span class="built_in">return</span> count(<span class="variable">$data</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">timeKey</span></span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$i</span> = 0;</span><br><span class="line">        <span class="keyword">while</span> (<span class="variable">$i</span> != 3) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$this</span>-&gt;verify()) &#123;</span><br><span class="line">                <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="variable">$i</span>++;</span><br><span class="line">            sleep(1);// 等待1s</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>调用时, 直接调用 packet 的 timeKey 方法</p>
 
           
@@ -656,7 +772,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -673,7 +789,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
