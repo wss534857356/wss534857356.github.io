@@ -206,6 +206,266 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/09/Javascript-Study-Notes/" itemprop="url">
+                  Javascript Study Notes
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-09T22:11:03+08:00" content="2017-05-09">
+              2017-05-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#function</p>
+<p>##Function declaration statements<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcname</span>(<span class="params">&#123;arguments&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return some statements</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##Function definition expressions<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcname = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;arguments&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return some statements</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Function declaration statements may only appear at the top level of the funtion they are nested within.That is, function definitions may not appear within <strong>if</strong> statements, <strong>while</strong> loop, or any other statements.<br>The function declaration statement also declares the function name as a variable and assigns the function object to it. Like variables declared with <strong>var</strong>, functions defined with function definition statements are implicitly “hoisted” to the top of the containing script or function, so that they are visible throughout the script or function. With var, only the variable declaration is hoisted—the variable initialization code remains where you<br>placed it.<br>Both the function name and the function body are hoisted: all functions in a script or all nested functions in a function are declared before any other code is run. This means that you can invoke a Javascript function before you declare it.<br>Like the <strong>var</strong> statement, function declaration statements create variables that cannot be deleted. These variables are not read-only, however, and their value can be overwritten</p>
+<p>#prototype</p>
+<p>##deepclone<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.deepClone = <span class="function"><span class="keyword">function</span>(<span class="params">top</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> Obj = [];</span><br><span class="line">  <span class="keyword">if</span>(!top)</span><br><span class="line">    top = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(top === <span class="keyword">this</span>[key]) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Obj[key] = <span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'object'</span></span><br><span class="line">      ? Obj[key] = <span class="keyword">this</span>[key].deepClone(top)</span><br><span class="line">      : Obj[key] = <span class="keyword">this</span>[key];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.deepClone = <span class="function"><span class="keyword">function</span>(<span class="params">top</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> Obj = [];</span><br><span class="line">  <span class="keyword">if</span>(!top) &#123;</span><br><span class="line">    top = <span class="keyword">this</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(top === <span class="keyword">this</span>[key]) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'object'</span> )&#123;</span><br><span class="line">      Obj[key] = <span class="keyword">this</span>[key].deepClone(top)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'function'</span> &amp;&amp; </span><br><span class="line">      <span class="keyword">this</span>[key] !== <span class="built_in">Object</span>.prototype.deepClone)&#123;</span><br><span class="line">      <span class="comment">// will find the deepClone function in the prototype.Object</span></span><br><span class="line">      <span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">      func.prototype = <span class="keyword">this</span>[key].deepClone(top);</span><br><span class="line">      Obj[key] = <span class="keyword">new</span> <span class="keyword">this</span>[key];</span><br><span class="line">      Obj[key].prototype = <span class="keyword">new</span> func;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      Obj[key] = <span class="keyword">this</span>[key];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##bind<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span> (<span class="params">oThis</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Function.prototype.bind - what is trying to be bound is not callable"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> aArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>), </span><br><span class="line">        fToBind = <span class="keyword">this</span>, </span><br><span class="line">        fNOP = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        fBound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> fToBind.apply(</span><br><span class="line">              <span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP &amp;&amp; oThis ? <span class="keyword">this</span> : oThis || <span class="built_in">window</span>,</span><br><span class="line">              aArgs.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>))</span><br><span class="line">          );</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    fNOP.prototype = fToBind.prototype;</span><br><span class="line">    fBound.prototype = <span class="keyword">new</span> fNOP();</span><br><span class="line">    <span class="keyword">return</span> fBound;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/12/Winter-Holiday-Plan/" itemprop="url">
+                  Winter Holiday Plan
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-12T22:04:58+08:00" content="2017-01-12">
+              2017-01-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##寒假计划 <code>2017.1.12 ~ 2017.2.12</code></p>
+<ul>
+<li><p>[X] Graphql <code>2017.1.14 ~ 2017.1.18</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// obj 代表这个函数返回的对象</span></span><br><span class="line"><span class="comment">// param 代表传入函数的参数</span></span><br><span class="line"><span class="comment">// context 代表对象注入的上下文</span></span><br><span class="line"><span class="comment">// info 函数的状态</span></span><br><span class="line">resolve: <span class="function"><span class="keyword">function</span>(<span class="params">obj, param, context, info</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return obj;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[X] mongodb <code>2017.1.20 ?</code></p>
+<blockquote>
+<p>Robomongo、Mongochef用作MongoDB可视化工具<br>后台运行需添加日志路径<br>mongoess, mongolass 作为连接mongodb的中间件</p>
+</blockquote>
+</li>
+<li>[X] node <code>2017.1.14 ?</code><blockquote>
+<p>nvm、n管理node版本<br>nrm切换npm源</p>
+</blockquote>
+</li>
+<li>[X] memcached <code>2017.1.19 ?</code></li>
+<li>[X] docker<blockquote>
+<p>images显示镜像, ps显示容器, rm删除容器, rmi删除镜像, tag标记<br>run commit build 相关命令<br>容器云保证最小开销,易扩展<br>数据保留在数据卷中,容器由Dockerfile创建</p>
+</blockquote>
+</li>
+<li>[ ] es2015,es2016 <code>2017.1.14 ?</code></li>
+<li>[ ] origami studio<blockquote>
+<p>节点动效软件</p>
+</blockquote>
+</li>
+<li>[X] <del>koa</del>/express <code>2017.1.14 ?</code><blockquote>
+<p>koa后面再说吧。。<br>关于express中headerSent公共属性与304缓存<br>express中使用res.headerSent公共属性判断是否发送了header,<br>我们知道header是早于body的,所以当我们在发送200头时,<br>client端才认为我们达成了一次正确请求,<br>当我在express中使用中间件的headerSent属性是否为true来判断是否发送了协议头,<br>却发现如下报错<br><code>Error: Can&#39;t render headers after they are sent to the client.</code><br>这是由于当我们请求时,如果缓存未过期,返回304协议头,将会不再进入路由,<br>但如果我们在此之前使用中间件判断时会出现headerSent为false的情况,<br>所以应当在中间件判断headerSent的位置判断协议头是否不为304</p>
+</blockquote>
+</li>
+<li>[X] 函数式编程<blockquote>
+<p>函数一等公民, 一切变量都是函数<br>闭包, 调用外部函数中变量<br>内存泄漏, 父函数在闭包函数被释放前无法释放<br>回调, 函数入参<br>原型链</p>
+</blockquote>
+</li>
+<li>[X] node单元测试<blockquote>
+<p>mocha是一种js测试框架:<br>describe是Test Suite的开始, 可相互嵌套,<br>it是测试模块,<br>before在beforeEach执行之前同步执行<br>beforeEach在每个it执行之前执行<br>afterEach在每个it执行之后执行<br>after在afterEach执行之后同步执行<br>xit, it.skip, 空函数 都会pending测试<br>supertest should istanbul</p>
+</blockquote>
+</li>
+<li>[ ] 深度学习</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/07/安卓签名打包成Apk/" itemprop="url">
                   安卓签名打包成Apk
                 </a>
@@ -771,7 +1031,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

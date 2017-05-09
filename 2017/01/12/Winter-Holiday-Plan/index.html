@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react,react-native,android," />
+  <meta name="keywords" content="日记," />
 
 
 
@@ -57,19 +57,25 @@
 
 
 
-<meta name="description" content="1.使用keytool命令生成签名密钥1keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改,">
+<meta name="description" content="##寒假计划 2017.1.12 ~ 2017.2.12
+
+[X] Graphql 2017.1.14 ~ 2017.1.18
+1234567// obj 代表这个函数返回的对象// param 代表传入函数的参数// context 代表对象注入的上下文// info 函数的状态resolve: function(obj, param, context, info) &amp;#123;    // r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓签名打包成Apk">
-<meta property="og:url" content="http://wss534857356.github.io/2016/06/07/安卓签名打包成Apk/index.html">
+<meta property="og:title" content="Winter Holiday Plan">
+<meta property="og:url" content="http://wss534857356.github.io/2017/01/12/Winter-Holiday-Plan/index.html">
 <meta property="og:site_name" content="shenshun">
-<meta property="og:description" content="1.使用keytool命令生成签名密钥1keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改,">
-<meta property="og:updated_time" content="2017-05-09T14:05:36.137Z">
+<meta property="og:description" content="##寒假计划 2017.1.12 ~ 2017.2.12
+
+[X] Graphql 2017.1.14 ~ 2017.1.18
+1234567// obj 代表这个函数返回的对象// param 代表传入函数的参数// context 代表对象注入的上下文// info 函数的状态resolve: function(obj, param, context, info) &amp;#123;    // r">
+<meta property="og:updated_time" content="2017-05-09T14:07:05.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安卓签名打包成Apk">
-<meta name="twitter:description" content="1.使用keytool命令生成签名密钥1keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改,">
+<meta name="twitter:title" content="Winter Holiday Plan">
+<meta name="twitter:description" content="##寒假计划 2017.1.12 ~ 2017.2.12
+
+[X] Graphql 2017.1.14 ~ 2017.1.18
+1234567// obj 代表这个函数返回的对象// param 代表传入函数的参数// context 代表对象注入的上下文// info 函数的状态resolve: function(obj, param, context, info) &amp;#123;    // r">
 
 
 
@@ -87,7 +93,7 @@
   };
 </script>
 
-  <title> 安卓签名打包成Apk | shenshun </title>
+  <title> Winter Holiday Plan | shenshun </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -207,7 +213,7 @@
             
             
               
-                安卓签名打包成Apk
+                Winter Holiday Plan
               
             
           </h1>
@@ -219,8 +225,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-07T12:39:38+08:00" content="2016-06-07">
-              2016-06-07
+            <time itemprop="dateCreated" datetime="2017-01-12T22:04:58+08:00" content="2017-01-12">
+              2017-01-12
             </time>
           </span>
 
@@ -233,8 +239,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/code/" itemprop="url" rel="index">
-                    <span itemprop="name">code</span>
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
                   </a>
                 </span>
 
@@ -265,15 +271,44 @@
       
 
       
-        <p>1.使用keytool命令生成签名密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000</span><br></pre></td></tr></table></figure></p>
-<p>其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改, 在之后会使用这两个名称, 所以需要记录一下<br>之后会询问你密钥库口令和密钥口令(两个密码可以不同,之后密钥口令也会用到,所以也不要忘记),以及相关的签名信息,直接填写即可</p>
-<p>1+.使用Android Studio IDE 生成密钥</p>
-<p>菜单中选择build-&gt;Generate Signed APK,<br>之后点击[Create new…],<br>直接填写相关信息即可,<br>最后会生成.jks结尾的文件,.jks和.keystore都可以用作签名,所以使用上没有区别</p>
-<p>2.编辑android下的gradle.properties文件</p>
-<p>添加如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MYAPP_RELEASE_STORE_FILE=my-release-key.keystore    // 之前生成的文件名</span><br><span class="line">MYAPP_RELEASE_KEY_ALIAS=my-key-alias                // 生成签名时的<span class="built_in">alias</span>名称</span><br><span class="line">MYAPP_RELEASE_STORE_PASSWORD=store_password         // 密钥库口令</span><br><span class="line">MYAPP_RELEASE_KEY_PASSWORD=password                 // 密钥口令</span><br></pre></td></tr></table></figure></p>
-<p>3.编辑工程文件中的android/app/build.gradle文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">...  </span><br><span class="line">android &#123;  </span><br><span class="line">    ...  </span><br><span class="line">    defaultConfig &#123; ... &#125;  </span><br><span class="line">    signingConfigs &#123;  </span><br><span class="line">        release &#123;  </span><br><span class="line">            storeFile file(MYAPP_RELEASE_STORE_FILE)  </span><br><span class="line">            storePassword MYAPP_RELEASE_STORE_PASSWORD  </span><br><span class="line">            keyAlias MYAPP_RELEASE_KEY_ALIAS  </span><br><span class="line">            keyPassword MYAPP_RELEASE_KEY_PASSWORD  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    buildTypes &#123;  </span><br><span class="line">        release &#123;  </span><br><span class="line">            ...  </span><br><span class="line">            signingConfig signingConfigs.release  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">…</span><br></pre></td></tr></table></figure></p>
-<p>4.在android的目录下使用dos命令行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew assembleRelease</span><br></pre></td></tr></table></figure></p>
-<p>5.该命令运行结束之后，会在android/app/build/outputs/apk目录下面生成app-release.apk文件,即可用于发布</p>
+        <p>##寒假计划 <code>2017.1.12 ~ 2017.2.12</code></p>
+<ul>
+<li><p>[X] Graphql <code>2017.1.14 ~ 2017.1.18</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// obj 代表这个函数返回的对象</span></span><br><span class="line"><span class="comment">// param 代表传入函数的参数</span></span><br><span class="line"><span class="comment">// context 代表对象注入的上下文</span></span><br><span class="line"><span class="comment">// info 函数的状态</span></span><br><span class="line">resolve: <span class="function"><span class="keyword">function</span>(<span class="params">obj, param, context, info</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return obj;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[X] mongodb <code>2017.1.20 ?</code></p>
+<blockquote>
+<p>Robomongo、Mongochef用作MongoDB可视化工具<br>后台运行需添加日志路径<br>mongoess, mongolass 作为连接mongodb的中间件</p>
+</blockquote>
+</li>
+<li>[X] node <code>2017.1.14 ?</code><blockquote>
+<p>nvm、n管理node版本<br>nrm切换npm源</p>
+</blockquote>
+</li>
+<li>[X] memcached <code>2017.1.19 ?</code></li>
+<li>[X] docker<blockquote>
+<p>images显示镜像, ps显示容器, rm删除容器, rmi删除镜像, tag标记<br>run commit build 相关命令<br>容器云保证最小开销,易扩展<br>数据保留在数据卷中,容器由Dockerfile创建</p>
+</blockquote>
+</li>
+<li>[ ] es2015,es2016 <code>2017.1.14 ?</code></li>
+<li>[ ] origami studio<blockquote>
+<p>节点动效软件</p>
+</blockquote>
+</li>
+<li>[X] <del>koa</del>/express <code>2017.1.14 ?</code><blockquote>
+<p>koa后面再说吧。。<br>关于express中headerSent公共属性与304缓存<br>express中使用res.headerSent公共属性判断是否发送了header,<br>我们知道header是早于body的,所以当我们在发送200头时,<br>client端才认为我们达成了一次正确请求,<br>当我在express中使用中间件的headerSent属性是否为true来判断是否发送了协议头,<br>却发现如下报错<br><code>Error: Can&#39;t render headers after they are sent to the client.</code><br>这是由于当我们请求时,如果缓存未过期,返回304协议头,将会不再进入路由,<br>但如果我们在此之前使用中间件判断时会出现headerSent为false的情况,<br>所以应当在中间件判断headerSent的位置判断协议头是否不为304</p>
+</blockquote>
+</li>
+<li>[X] 函数式编程<blockquote>
+<p>函数一等公民, 一切变量都是函数<br>闭包, 调用外部函数中变量<br>内存泄漏, 父函数在闭包函数被释放前无法释放<br>回调, 函数入参<br>原型链</p>
+</blockquote>
+</li>
+<li>[X] node单元测试<blockquote>
+<p>mocha是一种js测试框架:<br>describe是Test Suite的开始, 可相互嵌套,<br>it是测试模块,<br>before在beforeEach执行之前同步执行<br>beforeEach在每个it执行之前执行<br>afterEach在每个it执行之后执行<br>after在afterEach执行之后同步执行<br>xit, it.skip, 空函数 都会pending测试<br>supertest should istanbul</p>
+</blockquote>
+</li>
+<li>[ ] 深度学习</li>
+</ul>
 
       
     </div>
@@ -288,11 +323,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag">#react</a>
-          
-            <a href="/tags/react-native/" rel="tag">#react-native</a>
-          
-            <a href="/tags/android/" rel="tag">#android</a>
+            <a href="/tags/日记/" rel="tag">#日记</a>
           
         </div>
       
@@ -301,16 +332,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/数据缓存及同步数据/" rel="next" title="数据缓存及同步数据">
-                <i class="fa fa-chevron-left"></i> 数据缓存及同步数据
+              <a href="/2016/06/07/安卓签名打包成Apk/" rel="next" title="安卓签名打包成Apk">
+                <i class="fa fa-chevron-left"></i> 安卓签名打包成Apk
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/12/Winter-Holiday-Plan/" rel="prev" title="Winter Holiday Plan">
-                Winter Holiday Plan <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/09/Javascript-Study-Notes/" rel="prev" title="Javascript Study Notes">
+                Javascript Study Notes <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

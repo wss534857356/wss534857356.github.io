@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react,react-native,android," />
+  <meta name="keywords" content="日记," />
 
 
 
@@ -57,19 +57,22 @@
 
 
 
-<meta name="description" content="1.使用keytool命令生成签名密钥1keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改,">
+<meta name="description" content="#function
+##Function declaration statements123function funcname(&amp;#123;arguments&amp;#125;) &amp;#123;    // return some statements&amp;#125;
+##Function definition expressions123var funcname = function(&amp;#123;argum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓签名打包成Apk">
-<meta property="og:url" content="http://wss534857356.github.io/2016/06/07/安卓签名打包成Apk/index.html">
+<meta property="og:title" content="Javascript Study Notes">
+<meta property="og:url" content="http://wss534857356.github.io/2017/05/09/Javascript-Study-Notes/index.html">
 <meta property="og:site_name" content="shenshun">
-<meta property="og:description" content="1.使用keytool命令生成签名密钥1keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改,">
-<meta property="og:updated_time" content="2017-05-09T14:05:36.137Z">
+<meta property="og:description" content="#function
+##Function declaration statements123function funcname(&amp;#123;arguments&amp;#125;) &amp;#123;    // return some statements&amp;#125;
+##Function definition expressions123var funcname = function(&amp;#123;argum">
+<meta property="og:updated_time" content="2017-05-09T14:12:19.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安卓签名打包成Apk">
-<meta name="twitter:description" content="1.使用keytool命令生成签名密钥1keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改,">
+<meta name="twitter:title" content="Javascript Study Notes">
+<meta name="twitter:description" content="#function
+##Function declaration statements123function funcname(&amp;#123;arguments&amp;#125;) &amp;#123;    // return some statements&amp;#125;
+##Function definition expressions123var funcname = function(&amp;#123;argum">
 
 
 
@@ -87,7 +90,7 @@
   };
 </script>
 
-  <title> 安卓签名打包成Apk | shenshun </title>
+  <title> Javascript Study Notes | shenshun </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -207,7 +210,7 @@
             
             
               
-                安卓签名打包成Apk
+                Javascript Study Notes
               
             
           </h1>
@@ -219,8 +222,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-07T12:39:38+08:00" content="2016-06-07">
-              2016-06-07
+            <time itemprop="dateCreated" datetime="2017-05-09T22:11:03+08:00" content="2017-05-09">
+              2017-05-09
             </time>
           </span>
 
@@ -233,8 +236,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/code/" itemprop="url" rel="index">
-                    <span itemprop="name">code</span>
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
                   </a>
                 </span>
 
@@ -265,15 +268,14 @@
       
 
       
-        <p>1.使用keytool命令生成签名密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -v -keystore my-release-key.keystore  -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000</span><br></pre></td></tr></table></figure></p>
-<p>其中my-release-key.keystore是将要生成的文件名, my-key-alias也是自己取的名称, 都可以修改, 在之后会使用这两个名称, 所以需要记录一下<br>之后会询问你密钥库口令和密钥口令(两个密码可以不同,之后密钥口令也会用到,所以也不要忘记),以及相关的签名信息,直接填写即可</p>
-<p>1+.使用Android Studio IDE 生成密钥</p>
-<p>菜单中选择build-&gt;Generate Signed APK,<br>之后点击[Create new…],<br>直接填写相关信息即可,<br>最后会生成.jks结尾的文件,.jks和.keystore都可以用作签名,所以使用上没有区别</p>
-<p>2.编辑android下的gradle.properties文件</p>
-<p>添加如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MYAPP_RELEASE_STORE_FILE=my-release-key.keystore    // 之前生成的文件名</span><br><span class="line">MYAPP_RELEASE_KEY_ALIAS=my-key-alias                // 生成签名时的<span class="built_in">alias</span>名称</span><br><span class="line">MYAPP_RELEASE_STORE_PASSWORD=store_password         // 密钥库口令</span><br><span class="line">MYAPP_RELEASE_KEY_PASSWORD=password                 // 密钥口令</span><br></pre></td></tr></table></figure></p>
-<p>3.编辑工程文件中的android/app/build.gradle文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">...  </span><br><span class="line">android &#123;  </span><br><span class="line">    ...  </span><br><span class="line">    defaultConfig &#123; ... &#125;  </span><br><span class="line">    signingConfigs &#123;  </span><br><span class="line">        release &#123;  </span><br><span class="line">            storeFile file(MYAPP_RELEASE_STORE_FILE)  </span><br><span class="line">            storePassword MYAPP_RELEASE_STORE_PASSWORD  </span><br><span class="line">            keyAlias MYAPP_RELEASE_KEY_ALIAS  </span><br><span class="line">            keyPassword MYAPP_RELEASE_KEY_PASSWORD  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    buildTypes &#123;  </span><br><span class="line">        release &#123;  </span><br><span class="line">            ...  </span><br><span class="line">            signingConfig signingConfigs.release  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">…</span><br></pre></td></tr></table></figure></p>
-<p>4.在android的目录下使用dos命令行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew assembleRelease</span><br></pre></td></tr></table></figure></p>
-<p>5.该命令运行结束之后，会在android/app/build/outputs/apk目录下面生成app-release.apk文件,即可用于发布</p>
+        <p>#function</p>
+<p>##Function declaration statements<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcname</span>(<span class="params">&#123;arguments&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return some statements</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##Function definition expressions<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcname = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;arguments&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return some statements</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Function declaration statements may only appear at the top level of the funtion they are nested within.That is, function definitions may not appear within <strong>if</strong> statements, <strong>while</strong> loop, or any other statements.<br>The function declaration statement also declares the function name as a variable and assigns the function object to it. Like variables declared with <strong>var</strong>, functions defined with function definition statements are implicitly “hoisted” to the top of the containing script or function, so that they are visible throughout the script or function. With var, only the variable declaration is hoisted—the variable initialization code remains where you<br>placed it.<br>Both the function name and the function body are hoisted: all functions in a script or all nested functions in a function are declared before any other code is run. This means that you can invoke a Javascript function before you declare it.<br>Like the <strong>var</strong> statement, function declaration statements create variables that cannot be deleted. These variables are not read-only, however, and their value can be overwritten</p>
+<p>#prototype</p>
+<p>##deepclone<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.deepClone = <span class="function"><span class="keyword">function</span>(<span class="params">top</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> Obj = [];</span><br><span class="line">  <span class="keyword">if</span>(!top)</span><br><span class="line">    top = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(top === <span class="keyword">this</span>[key]) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Obj[key] = <span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'object'</span></span><br><span class="line">      ? Obj[key] = <span class="keyword">this</span>[key].deepClone(top)</span><br><span class="line">      : Obj[key] = <span class="keyword">this</span>[key];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.deepClone = <span class="function"><span class="keyword">function</span>(<span class="params">top</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> Obj = [];</span><br><span class="line">  <span class="keyword">if</span>(!top) &#123;</span><br><span class="line">    top = <span class="keyword">this</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(top === <span class="keyword">this</span>[key]) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'object'</span> )&#123;</span><br><span class="line">      Obj[key] = <span class="keyword">this</span>[key].deepClone(top)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>[key] === <span class="string">'function'</span> &amp;&amp; </span><br><span class="line">      <span class="keyword">this</span>[key] !== <span class="built_in">Object</span>.prototype.deepClone)&#123;</span><br><span class="line">      <span class="comment">// will find the deepClone function in the prototype.Object</span></span><br><span class="line">      <span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">      func.prototype = <span class="keyword">this</span>[key].deepClone(top);</span><br><span class="line">      Obj[key] = <span class="keyword">new</span> <span class="keyword">this</span>[key];</span><br><span class="line">      Obj[key].prototype = <span class="keyword">new</span> func;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      Obj[key] = <span class="keyword">this</span>[key];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##bind<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span> (<span class="params">oThis</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"Function.prototype.bind - what is trying to be bound is not callable"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> aArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>), </span><br><span class="line">        fToBind = <span class="keyword">this</span>, </span><br><span class="line">        fNOP = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        fBound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> fToBind.apply(</span><br><span class="line">              <span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP &amp;&amp; oThis ? <span class="keyword">this</span> : oThis || <span class="built_in">window</span>,</span><br><span class="line">              aArgs.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>))</span><br><span class="line">          );</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    fNOP.prototype = fToBind.prototype;</span><br><span class="line">    fBound.prototype = <span class="keyword">new</span> fNOP();</span><br><span class="line">    <span class="keyword">return</span> fBound;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -288,11 +290,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag">#react</a>
-          
-            <a href="/tags/react-native/" rel="tag">#react-native</a>
-          
-            <a href="/tags/android/" rel="tag">#android</a>
+            <a href="/tags/日记/" rel="tag">#日记</a>
           
         </div>
       
@@ -301,17 +299,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/数据缓存及同步数据/" rel="next" title="数据缓存及同步数据">
-                <i class="fa fa-chevron-left"></i> 数据缓存及同步数据
+              <a href="/2017/01/12/Winter-Holiday-Plan/" rel="next" title="Winter Holiday Plan">
+                <i class="fa fa-chevron-left"></i> Winter Holiday Plan
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/12/Winter-Holiday-Plan/" rel="prev" title="Winter Holiday Plan">
-                Winter Holiday Plan <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
