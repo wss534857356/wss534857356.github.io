@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="nginx,Makefile," />
 
 
 
@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个实时监听数据
-完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现123456789101112131415161718192021222324252627class packet&amp;#123;    private $">
+<meta name="description" content="#基础介绍Nginx是一款面向性能设计的HTTP服务器，相较于Apache、lighttpd具有占有内存少，稳定性高等优势。与旧版本（&amp;lt;=2.2）的Apache不同，nginx不采用每客户机一线程的设计模型，而是充分使用异步逻辑，削减了上下文调度开销，所以并发服务能力更强。整体采用模块化设计，有丰富的模块库和第三方模块库，配置灵活。 在Linux操作系统下，nginx使用epoll事件模型，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于PHP监听数据库的定时器">
-<meta property="og:url" content="http://wss534857356.github.io/2016/05/23/关于PHP的定时器/index.html">
+<meta property="og:title" content="安装nginx服务器">
+<meta property="og:url" content="http://wss534857356.github.io/2017/06/14/安装nginx服务器/index.html">
 <meta property="og:site_name" content="shenshun">
-<meta property="og:description" content="今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个实时监听数据
-完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现123456789101112131415161718192021222324252627class packet&amp;#123;    private $">
-<meta property="og:updated_time" content="2017-05-09T14:05:50.770Z">
+<meta property="og:description" content="#基础介绍Nginx是一款面向性能设计的HTTP服务器，相较于Apache、lighttpd具有占有内存少，稳定性高等优势。与旧版本（&amp;lt;=2.2）的Apache不同，nginx不采用每客户机一线程的设计模型，而是充分使用异步逻辑，削减了上下文调度开销，所以并发服务能力更强。整体采用模块化设计，有丰富的模块库和第三方模块库，配置灵活。 在Linux操作系统下，nginx使用epoll事件模型，">
+<meta property="og:image" content="http://wss534857356.github.io/2017/06/14/安装nginx服务器/configure.jpg">
+<meta property="og:image" content="http://wss534857356.github.io/2017/06/14/安装nginx服务器/make.jpg">
+<meta property="og:updated_time" content="2017-06-14T02:57:57.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于PHP监听数据库的定时器">
-<meta name="twitter:description" content="今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个实时监听数据
-完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现123456789101112131415161718192021222324252627class packet&amp;#123;    private $">
+<meta name="twitter:title" content="安装nginx服务器">
+<meta name="twitter:description" content="#基础介绍Nginx是一款面向性能设计的HTTP服务器，相较于Apache、lighttpd具有占有内存少，稳定性高等优势。与旧版本（&amp;lt;=2.2）的Apache不同，nginx不采用每客户机一线程的设计模型，而是充分使用异步逻辑，削减了上下文调度开销，所以并发服务能力更强。整体采用模块化设计，有丰富的模块库和第三方模块库，配置灵活。 在Linux操作系统下，nginx使用epoll事件模型，">
+<meta name="twitter:image" content="http://wss534857356.github.io/2017/06/14/安装nginx服务器/configure.jpg">
 
 
 
@@ -87,7 +87,7 @@
   };
 </script>
 
-  <title> 关于PHP监听数据库的定时器 | shenshun </title>
+  <title> 安装nginx服务器 | shenshun </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -207,7 +207,7 @@
             
             
               
-                关于PHP监听数据库的定时器
+                安装nginx服务器
               
             
           </h1>
@@ -219,30 +219,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T23:34:54+08:00" content="2016-05-23">
-              2016-05-23
+            <time itemprop="dateCreated" datetime="2017-06-14T10:52:40+08:00" content="2017-06-14">
+              2017-06-14
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/code/" itemprop="url" rel="index">
-                    <span itemprop="name">code</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -265,9 +246,26 @@
       
 
       
-        <p>今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个<strong>实时监听数据</strong></p>
-<p>完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class packet</span><br><span class="line">&#123;</span><br><span class="line">    private <span class="variable">$lastId</span>;</span><br><span class="line">    private <span class="variable">$DB</span>;</span><br><span class="line">    ...</span><br><span class="line">    private <span class="keyword">function</span> <span class="function"><span class="title">verify</span></span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$sql_select</span> = <span class="string">'SELECT count(*) FROM raw_command WHERE id=:id AND ack_time IS NOT NULL ;'</span>;</span><br><span class="line">        // 已封装的查询方法, 使用PDO的prepare方法, 预保留字段.</span><br><span class="line">        <span class="variable">$data</span> = <span class="variable">$this</span>-&gt;DB-&gt;selectQuery(<span class="variable">$sql_select</span>, [<span class="string">':id'</span> =&gt; <span class="variable">$this</span>-&gt;lastId]);</span><br><span class="line">        // 返回字段是否变化.</span><br><span class="line">        <span class="built_in">return</span> count(<span class="variable">$data</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">timeKey</span></span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$i</span> = 0;</span><br><span class="line">        <span class="keyword">while</span> (<span class="variable">$i</span> != 3) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$this</span>-&gt;verify()) &#123;</span><br><span class="line">                <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="variable">$i</span>++;</span><br><span class="line">            sleep(1);// 等待1s</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用时, 直接调用 packet 的 timeKey 方法</p>
+        <p>#基础介绍<br>Nginx是一款面向性能设计的HTTP服务器，相较于Apache、lighttpd具有占有内存少，稳定性高等优势。与旧版本（&lt;=2.2）的Apache不同，nginx不采用每客户机一线程的设计模型，而是充分使用异步逻辑，削减了上下文调度开销，所以并发服务能力更强。整体采用模块化设计，有丰富的模块库和第三方模块库，配置灵活。 在Linux操作系统下，nginx使用epoll事件模型，得益于此，nginx在Linux操作系统下效率相当高。同时Nginx在OpenBSD或FreeBSD操作系统上采用类似于epoll的高效事件模型kqueue。</p>
+<pre><code>Nginx在官方测试的结果中，能够支持五万个平行连接，而在实际的运作中，可以支持二万至四万个平行链接。
+</code></pre><p>#安装nginx</p>
+<blockquote>
+<p>本文中使用的是centos7 linux操作系统, 相关命令可能与centos5有所不同</p>
+</blockquote>
+<p>##直接安装</p>
+<p>在<code>centos7</code>下可以通过<code>yum</code>命令直接安装编译过的nginx服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx -y <span class="comment">#安装最新版本的nginx</span></span><br><span class="line">systemctl start nginx <span class="comment">#centos7替代service命令</span></span><br></pre></td></tr></table></figure>
+<p>##编译安装</p>
+<p>在<code>nginx</code>服务器中, 模块化设计是其一大特色, 在1.9.11之前的版本中, 我们都需要通过编译来添加和删除模块, 所以编译安装也是一个通点</p>
+<p>###安装环境: <code>yum</code><br>先安装准备环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc gcc-c++ automake pcre pcre-devel zlip zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure></p>
+<p>gcc为GNU Compiler Collection的缩写，可以编译C和C++源代码等，它是GNU开发的C和C++以及其他很多种语言 的编译器（最早的时候只能编译C，后来很快进化成一个编译多种语言的集合，如Fortran、Pascal、Objective-C、Java、Ada、 Go等。）gcc 在编译C++源代码的阶段，只能编译 C++ 源文件，而不能自动和 C++ 程序使用的库链接（编译过程分为编译、链接两个阶段，注意不要和可执行文件这个概念搞混，相对可执行文件来说有三个重要的概念：编译（compile）、链接（link）、加载（load）。源程序文件被编译成目标文件，多个目标文件连同库被链接成一个最终的可执行文件，可执行文件被加载到内存中运行）。因此，通常使用 g++ 命令来完成 C++ 程序的编译和连接，该程序会自动调用 gcc 实现编译。<br>gcc-c++也能编译C源代码，只不过把会把它当成C++源代码，后缀为.c的，gcc把它当作是C程序，而g++当作是c++程序；后缀为.cpp的，两者都会认为是c++程序，注意，虽然c++是c的超集，但是两者对语法的要求是有区别的。<br>automake是一个从Makefile.am文件自动生成Makefile.in的工具。为了生成Makefile.in，automake还需用到perl，由于automake创建的发布完全遵循GNU标准，所以在创建中不需要perl。libtool是一款方便生成各种程序库的工具。<br>pcre pcre-devel：在Nginx编译需要 PCRE(Perl Compatible Regular Expression)，因为Nginx 的Rewrite模块和HTTP 核心模块会使用到PCRE正则表达式语法。<br>zlip zlib-devel：nginx启用压缩功能的时候，需要此模块的支持。<br>openssl openssl-devel：开启SSL的时候需要此模块的支持。</p>
+<p>###下载相关安装包: <code>wget</code><br>官方网址在<a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org</a><br>你可以在这个页面查看当前仍旧支持的所有版本, <a href="http://nginx.org/download" target="_blank" rel="external">戳这里</a><br>在<code>linux</code>需要的目录下使用<code>wget</code>命令安装, 我的位置是<code>/root/</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.13.1.tar.gz <span class="comment">#下载对应文件</span></span><br><span class="line">tar xvf nginx-1.13.1.tar.gz <span class="comment">#x释放v报告相关信息f使用文件</span></span><br><span class="line"><span class="built_in">cd</span> nginx-1.13.1</span><br></pre></td></tr></table></figure></p>
+<p>###编译nginx: <code>./configure</code><br>首先需要使用<code>./configure</code>相关命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --sbin-path=/usr/<span class="built_in">local</span>/nginx/sbin/nginx --conf-path=/usr/<span class="built_in">local</span>/nginx/conf/nginx.conf --error-log-path=/var/<span class="built_in">log</span>/nginx/error.log --http-log-path=/var/<span class="built_in">log</span>/nginx/access.log --pid-path=/var/run/nginx/nginx.pid --lock-path=/var/<span class="built_in">local</span>/nginx.lock --usr=nginx --group=nginx --http-client-body-temp-path=/var/tmp/nginx/client/ --http-proxy-temp-path=/var/tmp/nginx/proxy/ --http-fastcgi-temp-path=/var/tmp/nginx/fcgi/ --http-uwsgi-temp-path=/var/tmp/nginx/uwsgi --http-scgi-temp-path=/var/tmp/nginx/scgi --with-pcre</span><br></pre></td></tr></table></figure></p>
+<p>以上命令分别设置安装路径, 运行文件路径, 配置文件路径, 报告错误路径, 访问路径等等, 部分内容可以在对应的主配置文件<code>nginx.conf</code>中修改。<br><img src="/2017/06/14/安装nginx服务器/configure.jpg" alt="configure"></p>
+<p>###生成文件: <code>make</code><br>编译生成nginx, 此时使用<code>make</code>命令, 会根据上一步生成的<code>Makefile</code>生成对应的模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>运行结果大致如下:<br><img src="/2017/06/14/安装nginx服务器/make.jpg" alt="make"></p>
+<p>###覆盖安装: <code>make install</code><br>创建相应目录, 如果已有目录, <code>nginx</code>主文件会覆盖之前的主文件</p>
+<p>#配置文件 <code>nginx.conf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">user  nobody; #启动用户</span><br><span class="line">worker_processes  1; #启动进程数量</span><br><span class="line">events &#123; #设置网络连接</span><br><span class="line">    worker_connections  1024; #设置最大并发数</span><br><span class="line">&#125;</span><br><span class="line">http &#123; #http模块, 每个http模块包含多个server块, 用于监听不同的域名和端口请求,每个server块包含多个location块, server块可以配置文件引入、MIME-Type定义、日志自定义、是否启用sendfile、连接超时时间和单个链接的请求上限等</span><br><span class="line">    include       mime.types; #文件扩展名与文件类型映射表</span><br><span class="line">    default_type  application/octet-stream; #默认文件类型</span><br><span class="line">    sendfile        on; #是否调用 sendfile 函数来输出文件, 避免用户缓冲区和内核缓冲区之间的拷贝</span><br><span class="line">    keepalive_timeout  65; #超时时长</span><br><span class="line">    #gzip  on; #gzip压缩</span><br><span class="line">    server &#123; #设置一个虚拟主机, 监听端口</span><br><span class="line">        listen       80; #监听80端口</span><br><span class="line">        server_name  localhost; #当前虚拟主机的名称</span><br><span class="line">        location / &#123; #拦截 / 目录下所有的请求</span><br><span class="line">            root   html; #root是访问文件的真实路径, 可以是绝对路径或相对路径</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">        error_page   500 502 503 504  /50x.html; #服务器50x错误</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -282,7 +280,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
+            <a href="/tags/nginx/" rel="tag">#nginx</a>
+          
+            <a href="/tags/Makefile/" rel="tag">#Makefile</a>
           
         </div>
       
@@ -291,17 +291,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/06/03/模板替换及正则捕捉/" rel="next" title="模板替换及正则捕捉">
+                <i class="fa fa-chevron-left"></i> 模板替换及正则捕捉
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/23/数据缓存及同步数据/" rel="prev" title="数据缓存及同步数据">
-                数据缓存及同步数据 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
