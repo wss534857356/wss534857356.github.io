@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="日记,javascript," />
 
 
 
@@ -57,19 +57,22 @@
 
 
 
-<meta name="description" content="今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个实时监听数据
-完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现123456789101112131415161718192021222324252627class packet&amp;#123;    private $">
+<meta name="description" content="如何利用一个小范围随机数生成一个大范围的随机数用一个5以内的随机数函数生成一个7以内的随机数函数1var rand5 = () =&amp;gt; ~~(Math.random()*5) // 利用这个函数生成5以内的随机数
+这题的解题思路很简单, 只要利用这个函数生成一个平均分布的范围大于7的随机数就可以了
+12345678910var rand7 = function() &amp;#123;  var va">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于PHP监听数据库的定时器">
-<meta property="og:url" content="http://wss534857356.github.io/2016/05/23/关于PHP的定时器/index.html">
+<meta property="og:title" content="Random number part1">
+<meta property="og:url" content="http://wss534857356.github.io/2017/10/31/Random-number-part1/index.html">
 <meta property="og:site_name" content="shenshun">
-<meta property="og:description" content="今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个实时监听数据
-完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现123456789101112131415161718192021222324252627class packet&amp;#123;    private $">
-<meta property="og:updated_time" content="2017-05-09T14:05:50.770Z">
+<meta property="og:description" content="如何利用一个小范围随机数生成一个大范围的随机数用一个5以内的随机数函数生成一个7以内的随机数函数1var rand5 = () =&amp;gt; ~~(Math.random()*5) // 利用这个函数生成5以内的随机数
+这题的解题思路很简单, 只要利用这个函数生成一个平均分布的范围大于7的随机数就可以了
+12345678910var rand7 = function() &amp;#123;  var va">
+<meta property="og:updated_time" content="2017-10-31T12:57:40.316Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于PHP监听数据库的定时器">
-<meta name="twitter:description" content="今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个实时监听数据
-完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现123456789101112131415161718192021222324252627class packet&amp;#123;    private $">
+<meta name="twitter:title" content="Random number part1">
+<meta name="twitter:description" content="如何利用一个小范围随机数生成一个大范围的随机数用一个5以内的随机数函数生成一个7以内的随机数函数1var rand5 = () =&amp;gt; ~~(Math.random()*5) // 利用这个函数生成5以内的随机数
+这题的解题思路很简单, 只要利用这个函数生成一个平均分布的范围大于7的随机数就可以了
+12345678910var rand7 = function() &amp;#123;  var va">
 
 
 
@@ -87,7 +90,7 @@
   };
 </script>
 
-  <title> 关于PHP监听数据库的定时器 | shenshun </title>
+  <title> Random number part1 | shenshun </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -207,7 +210,7 @@
             
             
               
-                关于PHP监听数据库的定时器
+                Random number part1
               
             
           </h1>
@@ -219,8 +222,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T23:34:54+08:00" content="2016-05-23">
-              2016-05-23
+            <time itemprop="dateCreated" datetime="2017-10-31T20:54:20+08:00" content="2017-10-31">
+              2017-10-31
             </time>
           </span>
 
@@ -233,8 +236,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/code/" itemprop="url" rel="index">
-                    <span itemprop="name">code</span>
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
                   </a>
                 </span>
 
@@ -265,9 +268,11 @@
       
 
       
-        <p>今天接触到一个项目, 需要在新增了数据之后监听字段, 如果超过 3 秒字段还不变化的话直接输出操作超时, 需要利用PHP完成一个<strong>实时监听数据</strong></p>
-<p>完成思路主要是每秒发送一个请求查询字符串是否变化, 当超过 3 秒或者字段变化时跳出循环, 以下是具体实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class packet</span><br><span class="line">&#123;</span><br><span class="line">    private <span class="variable">$lastId</span>;</span><br><span class="line">    private <span class="variable">$DB</span>;</span><br><span class="line">    ...</span><br><span class="line">    private <span class="keyword">function</span> <span class="function"><span class="title">verify</span></span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$sql_select</span> = <span class="string">'SELECT count(*) FROM raw_command WHERE id=:id AND ack_time IS NOT NULL ;'</span>;</span><br><span class="line">        // 已封装的查询方法, 使用PDO的prepare方法, 预保留字段.</span><br><span class="line">        <span class="variable">$data</span> = <span class="variable">$this</span>-&gt;DB-&gt;selectQuery(<span class="variable">$sql_select</span>, [<span class="string">':id'</span> =&gt; <span class="variable">$this</span>-&gt;lastId]);</span><br><span class="line">        // 返回字段是否变化.</span><br><span class="line">        <span class="built_in">return</span> count(<span class="variable">$data</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">timeKey</span></span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$i</span> = 0;</span><br><span class="line">        <span class="keyword">while</span> (<span class="variable">$i</span> != 3) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$this</span>-&gt;verify()) &#123;</span><br><span class="line">                <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="variable">$i</span>++;</span><br><span class="line">            sleep(1);// 等待1s</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用时, 直接调用 packet 的 timeKey 方法</p>
+        <h1 id="如何利用一个小范围随机数生成一个大范围的随机数"><a href="#如何利用一个小范围随机数生成一个大范围的随机数" class="headerlink" title="如何利用一个小范围随机数生成一个大范围的随机数"></a>如何利用一个小范围随机数生成一个大范围的随机数</h1><h2 id="用一个5以内的随机数函数生成一个7以内的随机数函数"><a href="#用一个5以内的随机数函数生成一个7以内的随机数函数" class="headerlink" title="用一个5以内的随机数函数生成一个7以内的随机数函数"></a>用一个5以内的随机数函数生成一个7以内的随机数函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rand5 = () =&gt; ~~(<span class="built_in">Math</span>.random()*<span class="number">5</span>) <span class="comment">// 利用这个函数生成5以内的随机数</span></span><br></pre></td></tr></table></figure>
+<p>这题的解题思路很简单, 只要利用这个函数生成一个平均分布的范围大于7的随机数就可以了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rand7 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> val = rand5()*<span class="number">5</span> + rand5() <span class="comment">// 平均分布 6~30 所以标准范围是6~26</span></span><br><span class="line">  <span class="keyword">return</span> val&gt;<span class="number">26</span>?rand7():val%<span class="number">7</span>+<span class="number">1</span> <span class="comment">// 27~30之间的数据全部抛弃重新随机</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">100000000</span>;i++) &#123;</span><br><span class="line">  b[rand7()]++</span><br><span class="line">  <span class="comment">// [0, 14286297, 14287880, 14282580, 14287830, 14278935, 14285595, 14290883]</span></span><br><span class="line">  <span class="comment">// 从数据看出是随机的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="延伸-如何利用一个小范围随机数生成一个大范围的随机数"><a href="#延伸-如何利用一个小范围随机数生成一个大范围的随机数" class="headerlink" title="延伸: 如何利用一个小范围随机数生成一个大范围的随机数"></a>延伸: 如何利用一个小范围随机数生成一个大范围的随机数</h2><p>重点在于如何保证随机数的平均分布<br>从<code>rand5()*5 + rand5()</code> 可以看出实现的原理是先生成一个[5,10,15,20,25]间隔为5的随机数组后再使用一个随机数去填充这个数组, 那么对于更大范围的数比如一个大于25的数, 就需要<code>rang5()*5*5+rand5()*5+rand5()</code> 得到一个区间是 31~155 总的范围长度为125的数组<br>所以只需要递归获得一个大于范围的数组长度, 就可以得到一个由小范围随机数生成的大范围随机数, 具体代码就不贴出来了, 有兴趣可以自己实现一下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里给出一个我偶然想到的阶乘</span></span><br><span class="line"><span class="keyword">const</span> factorial = <span class="function"><span class="keyword">function</span>(<span class="params">n, x, num=n</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// n 是对应的进制</span></span><br><span class="line">  <span class="comment">// x 表示进位的长度</span></span><br><span class="line">  <span class="comment">// num 表示被用于做乘法的数</span></span><br><span class="line">  <span class="comment">// 所以 factorial(n, x, num) = num * n^x</span></span><br><span class="line">  <span class="keyword">const</span> val = num.toString(n)</span><br><span class="line">  <span class="keyword">return</span> x?<span class="built_in">parseInt</span>(val.padEnd(val.length+x,<span class="string">"0"</span>),n):<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(factorial(<span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>) === <span class="number">5</span>&lt;&lt;<span class="number">4</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -282,7 +287,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
+            <a href="/tags/日记/" rel="tag">#日记</a>
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
         </div>
       
@@ -291,17 +298,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/06/14/安装nginx服务器/" rel="next" title="安装nginx服务器">
+                <i class="fa fa-chevron-left"></i> 安装nginx服务器
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/23/数据缓存及同步数据/" rel="prev" title="数据缓存及同步数据">
-                数据缓存及同步数据 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -420,7 +423,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何利用一个小范围随机数生成一个大范围的随机数"><span class="nav-number">1.</span> <span class="nav-text">如何利用一个小范围随机数生成一个大范围的随机数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用一个5以内的随机数函数生成一个7以内的随机数函数"><span class="nav-number">1.1.</span> <span class="nav-text">用一个5以内的随机数函数生成一个7以内的随机数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#延伸-如何利用一个小范围随机数生成一个大范围的随机数"><span class="nav-number">1.2.</span> <span class="nav-text">延伸: 如何利用一个小范围随机数生成一个大范围的随机数</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
